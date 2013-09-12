@@ -16,8 +16,10 @@
                 (9 "E" "G")
                 (11 "F" "G")))
 
+; Call the kruskal algorithm with the nodes and edges above
 (print "Kruskal algo")
 (print (kruskal nodes edges))
 
+; Call the kruskal algorithm with the nodes and edges above
 (print "Prim algo")
 (print (prim nodes edges))

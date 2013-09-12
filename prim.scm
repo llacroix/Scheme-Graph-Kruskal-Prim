@@ -5,7 +5,7 @@
 (load "disjoint-set.scm")
 (load "list-util.scm")
 
-; Prim algorithm 
+; Prim algorithm we have to copy
 (define (prim nodes edges)
   (define (prim-forest forest mst edges)
     edges)

@@ -1,3 +1,5 @@
+; Author: Loïc Faure-Lacroix
+; =============================================== 
 ; Disjoint Set using hashtable
 ; We can add find and do a union on our sets
 ; Add an element to the set with itself as parent
@@ -20,10 +22,3 @@
 ; parameters
 (define (ds-union self item1 item2)
   (hash-table-set! self item2 (hash-table-ref self item1)))
-
-; Fill the forest of nodes in our DisjointSet
-(define (fill-forest forest nodes)
-  (ds-add forest (car nodes))
-  (if (null? (cdr nodes))
-    #t
-    (fill-forest forest (cdr nodes))))
