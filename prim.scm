@@ -29,15 +29,28 @@
 (define (prim nodes edges)
   (define (prim-forest forest result root edges)
     (let ((edge (get-edge forest root edges)))
+      ; Get first possible edge in the edge list
+      ; if there is no edge, it means we might have added
+      ; all edges to the tree.
+      ; edges aren't removed from the list might get slow with big
+      ; graphs but should be good enough for small graphs since
+      ; we don't allocate/deallocate memory
       (if edge
         (begin
+            ; if edge is found we join it to our forest using the root
+            ; as root
             (ds-union forest root (list-ref edge 1))
             (ds-union forest root (list-ref edge 2))
+            ; Recurse for new edges and append the current edge to the results
             (prim-forest forest (append result (list edge)) root edges))
+        ; Otherwise we return the result
         result)))
 
   ; Code starts here
+  ; Sort our edges by increasing weights
   (sort-nodes edges)
   (let ((forest (make-hash-table)) (mst (list)) (root (car nodes)))
+    ; Fill our forest
     (fill-forest forest nodes)
+    ; Find our results
     (prim-forest forest mst root edges)))
