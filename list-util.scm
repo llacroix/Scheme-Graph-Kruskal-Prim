@@ -1,3 +1,6 @@
+; Code depend on the disjoin set
+(load "disjoint-set.scm")
+
 ; Sort edges in increasing order
 ; the first element of each edges should be the 
 ; weight of the edge
