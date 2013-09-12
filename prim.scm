@@ -5,5 +5,13 @@
 (load "disjoint-set.scm")
 (load "list-util.scm")
 
+; Prim algorithm 
 (define (prim nodes edges)
-  nodes)
+  (define (prim-forest forest mst edges)
+    edges)
+
+  ; Code starts here
+  (sort-nodes edges)
+  (let ((forest (make-hash-table)) (mst (list)))
+    (fill-forest forest nodes)
+    (prim-forest forest mst edges)))
