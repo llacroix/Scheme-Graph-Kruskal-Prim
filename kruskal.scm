@@ -1,9 +1,9 @@
 ; Author: Loïc Faure-Lacroix
-(require-extension extras)
-(require-extension srfi-69)
+(require "extras")
+(require "srfi-69")
 
-(load "disjoint-set.scm")
-(load "list-util.scm")
+(require "disjoint-set")
+(require "list-util")
 
 ; Kruskal algorithm is done here
 (define (kruskal nodes edges)

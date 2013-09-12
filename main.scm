@@ -1,5 +1,5 @@
-(load "kruskal.scm")
-(load "prim.scm")
+(require "kruskal")
+(require "prim")
 
 ; Nodes are our points and edges are the distance
 ; between two nodes. 

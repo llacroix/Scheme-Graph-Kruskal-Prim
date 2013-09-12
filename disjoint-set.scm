@@ -3,6 +3,8 @@
 ; Disjoint Set using hashtable
 ; We can add find and do a union on our sets
 ; Add an element to the set with itself as parent
+(require "srfi-69")
+
 (define (ds-add self item)
   (hash-table-set! self item item))
 
